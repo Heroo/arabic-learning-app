@@ -1,0 +1,35 @@
+[
+  {
+    "symbol": "َ",
+    "name_ar": "fatha",
+    "label": "Fatha",
+    "description": "Krótka samogłoska „a"",
+    "examples": [
+      {"word": "بَ", "translit": "ba"},
+      {"word": "كَ", "translit": "ka"},
+      {"word": "تَ", "translit": "ta"}
+    ]
+  },
+  {
+    "symbol": "ِ",
+    "name_ar": "kasra",
+    "label": "Kasra",
+    "description": "Krótka samogłoska „i"",
+    "examples": [
+      {"word": "بِ", "translit": "bi"},
+      {"word": "كِ", "translit": "ki"},
+      {"word": "تِ", "translit": "ti"}
+    ]
+  },
+  {
+    "symbol": "ُ",
+    "name_ar": "damma",
+    "label": "Damma",
+    "description": "Krótka samogłoska „u"",
+    "examples": [
+      {"word": "بُ", "translit": "bu"},
+      {"word": "كُ", "translit": "ku"},
+      {"word": "تُ", "translit": "tu"}
+    ]
+  }
+]

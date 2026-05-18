@@ -1,0 +1,169 @@
+[
+  {
+    "category": "greetings",
+    "words": [
+      {
+        "word": "مَرْحَبًا",
+        "transliteration": "marḥaban",
+        "polish": "cześć",
+        "letters": ["م", "ر", "ح", "ب", "ا"]
+      },
+      {
+        "word": "صَبَاحُ الخَيْرِ",
+        "transliteration": "ṣabāḥu al-khayr",
+        "polish": "dzień dobry",
+        "letters": ["ص", "ب", "ا", "ح", "خ", "ي", "ر"]
+      },
+      {
+        "word": "مَسَاءُ الخَيْرِ",
+        "transliteration": "masāʾu al-khayr",
+        "polish": "dobry wieczór",
+        "letters": ["م", "س", "ا", "ء", "خ", "ي", "ر"]
+      }
+    ]
+  },
+  {
+    "category": "family",
+    "words": [
+      {
+        "word": "أَب",
+        "transliteration": "ab",
+        "polish": "ojciec",
+        "letters": ["أ", "ب"]
+      },
+      {
+        "word": "أُمّ",
+        "transliteration": "umm",
+        "polish": "matka",
+        "letters": ["أ", "م"]
+      },
+      {
+        "word": "أَخ",
+        "transliteration": "akh",
+        "polish": "brat",
+        "letters": ["أ", "خ"]
+      },
+      {
+        "word": "أُخْت",
+        "transliteration": "ukht",
+        "polish": "siostra",
+        "letters": ["أ", "خ", "ت"]
+      }
+    ]
+  },
+  {
+    "category": "house",
+    "words": [
+      {
+        "word": "بَيْت",
+        "transliteration": "bayt",
+        "polish": "dom",
+        "letters": ["ب", "ي", "ت"]
+      },
+      {
+        "word": "بَاب",
+        "transliteration": "bāb",
+        "polish": "drzwi",
+        "letters": ["ب", "ا"]
+      },
+      {
+        "word": "شُبَّاك",
+        "transliteration": "shubbāk",
+        "polish": "okno",
+        "letters": ["ش", "ب", "ا", "ك"]
+      }
+    ]
+  },
+  {
+    "category": "numbers",
+    "words": [
+      {
+        "word": "وَاحِد",
+        "transliteration": "wāḥid",
+        "polish": "jeden",
+        "letters": ["و", "ا", "ح", "د"]
+      },
+      {
+        "word": "اِثْنَانِ",
+        "transliteration": "ithnān",
+        "polish": "dwa",
+        "letters": ["ا", "ث", "ن"]
+      },
+      {
+        "word": "ثَلَاثَة",
+        "transliteration": "thalātha",
+        "polish": "trzy",
+        "letters": ["ث", "ل", "ا", "ت", "ة"]
+      }
+    ]
+  },
+  {
+    "category": "colors",
+    "words": [
+      {
+        "word": "أَحْمَر",
+        "transliteration": "aḥmar",
+        "polish": "czerwony",
+        "letters": ["أ", "ح", "م", "ر"]
+      },
+      {
+        "word": "أَزْرَق",
+        "transliteration": "azraq",
+        "polish": "niebieski",
+        "letters": ["أ", "ز", "ر", "ق"]
+      },
+      {
+        "word": "أَخْضَر",
+        "transliteration": "akhḍar",
+        "polish": "zielony",
+        "letters": ["أ", "خ", "ض", "ر"]
+      }
+    ]
+  },
+  {
+    "category": "food",
+    "words": [
+      {
+        "word": "تَمْر",
+        "transliteration": "tamr",
+        "polish": "daktyl",
+        "letters": ["ت", "م", "ر"]
+      },
+      {
+        "word": "خُبْز",
+        "transliteration": "khubz",
+        "polish": "chleb",
+        "letters": ["خ", "ب", "ز"]
+      },
+      {
+        "word": "حَلِيب",
+        "transliteration": "ḥalīb",
+        "polish": "mleko",
+        "letters": ["ح", "ل", "ي", "ب"]
+      }
+    ]
+  },
+  {
+    "category": "animals",
+    "words": [
+      {
+        "word": "قِطّ",
+        "transliteration": "qiṭṭ",
+        "polish": "kot",
+        "letters": ["ق", "ط"]
+      },
+      {
+        "word": "جَمَل",
+        "transliteration": "jamal",
+        "polish": "wielbłąd",
+        "letters": ["ج", "م", "ل"]
+      },
+      {
+        "word": "فَرَس",
+        "transliteration": "faras",
+        "polish": "koń",
+        "letters": ["ف", "ر", "س"]
+      }
+    ]
+  }
+]

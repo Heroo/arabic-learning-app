@@ -1,6 +1,6 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useRef} from 'react'
 
-export default function LetterCard({letter}){
+export default function LetterCard({letter, activeSymbol, knownSymbols, onSelect, onToggleKnown, onOpenDetails}){
   const [playing, setPlaying] = useState(false)
   const [activeIdx, setActiveIdx] = useState(null)
   const synthRef = useRef(typeof window !== 'undefined' ? window.speechSynthesis : null)
@@ -8,7 +8,7 @@ export default function LetterCard({letter}){
 
   const play = async () => {
     setPlaying(true)
-    // prefer explicit audio URL (darmowe nagrania), fallback to Web Speech API
+
     if(letter.audioUrl){
       try{
         if(audioRef.current){
@@ -29,7 +29,6 @@ export default function LetterCard({letter}){
       synthRef.current.speak(utter)
     }
 
-    // highlight occurrences in example words sequentially
     for(const ex of letter.examples){
       await highlightSequence(ex.word)
       await wait(300)
@@ -62,25 +61,48 @@ export default function LetterCard({letter}){
   }
 
   const wait = (ms)=> new Promise(r=>setTimeout(r,ms))
+  const isActiveLetter = activeSymbol === letter.symbol
+  const isKnown = knownSymbols?.includes(letter.symbol)
+  const difficultyDots = '•'.repeat(letter.difficulty)
 
   return (
-    <div className="card">
-      <div style={{display:'flex',justifyContent:'space-between',alignItems:'center'}}>
+    <div className={`card ${isActiveLetter ? 'card-active' : ''} ${isKnown ? 'card-known' : ''}`}>
+      <div className="card-header">
         <div>
           <div className="letter">{letter.symbol}</div>
-          <div>{letter.polish}</div>
+          <div className="letter-name">{letter.name_ar} · {letter.polish}</div>
+          <div className="card-meta">
+            <span className="difficulty">{difficultyDots}</span>
+            <span className="ipa">{letter.ipa}</span>
+          </div>
         </div>
-        <div>
+        <div className="actions">
           <button className="play" onClick={play} disabled={playing}>{playing? 'Odtwarzanie...' : 'Odtwórz'}</button>
+          <button className={`select ${isActiveLetter ? 'selected' : ''}`} onClick={onSelect}>
+            {isActiveLetter ? 'Aktywna' : 'Ucz się'}
+          </button>
+          <button className={`select ${isKnown ? 'known' : ''}`} onClick={onToggleKnown}>
+            {isKnown ? 'Usuń z poznanych' : 'Oznacz jako poznane'}
+          </button>
+          <button className="details" onClick={onOpenDetails}>Szczegóły</button>
         </div>
+      </div>
+
+      {isKnown && <div className="known-badge">Poznane</div>}
+      <div className="forms-inline">
+        <div><span>Izol.</span><strong>{letter.forms.isolated}</strong></div>
+        <div><span>Początk.</span><strong>{letter.forms.initial}</strong></div>
+        <div><span>Środ.</span><strong>{letter.forms.medial}</strong></div>
+        <div><span>Końc.</span><strong>{letter.forms.final}</strong></div>
       </div>
 
       <div className="examples">
         {letter.examples.map((ex,wi)=> (
           <div className="word" key={wi}>
-            {Array.from(ex.word).map((ch,ci)=> (
-              <span key={ci} className={ci===activeIdx && ch===letter.symbol ? 'highlight' : ''}>{ch}</span>
-            ))}
+            {Array.from(ex.word).map((ch,ci)=> {
+              const isActive = (ci===activeIdx && ch===letter.symbol) || activeSymbol === ch
+              return <span key={ci} className={isActive ? 'highlight' : ''}>{ch}</span>
+            }))}
             {' '}— {ex.translit}
           </div>
         ))}
