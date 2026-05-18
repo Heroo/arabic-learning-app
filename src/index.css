@@ -1,0 +1,15 @@
+:root{
+  --bg:#f7f7fb;
+  --card:#fff;
+  --accent:#2b6cb0;
+}
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);margin:0;padding:20px}
+.container{max-width:900px;margin:0 auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.letter{font-size:48px;text-align:center}
+.play{background:var(--accent);color:#fff;border:0;padding:8px 12px;border-radius:6px;cursor:pointer}
+.examples{margin-top:12px}
+.word{font-size:20px;margin:6px 0}
+.highlight{background:yellow;border-radius:3px;padding:0 2px}
