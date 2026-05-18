@@ -7,9 +7,9 @@
   --highlight:#fde68a;
 }
 *{box-sizing:border-box}
-body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);margin:0;padding:20px}
+body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var(--text, #0f172a);margin:0;padding:20px}
 .container{max-width:900px;margin:0 auto}
-.status-bar{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding:12px 16px;border-radius:10px;background:#e2efff;color:#0f172a;font-weight:600}
+.status-bar{display:flex;align-items:center;gap:8px;margin-bottom:16px;padding:12px 16px;border-radius:10px;background:#e2efff;color:var(--text, #0f172a);font-weight:600}
 .top-nav{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
 .top-nav a{color:var(--accent);font-weight:700;text-decoration:none;padding:8px 12px;border-radius:10px;background:#eff6ff;transition:background .15s ease}
 .top-nav a:hover{background:#dbeafe}
@@ -30,6 +30,49 @@ body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);margin:0;
 .example-word{font-size:1.35rem;font-weight:700}
 .example-translit{color:#475569;font-size:.95rem}
 .harakat-card .play{min-width:120px}
+.section-header{margin-bottom:18px}
+.section-header h2{margin:0;font-size:1.8rem;color:var(--text, #0f172a)}
+.section-header p{margin:10px 0 0;color:var(--text, #334155);line-height:1.6}
+.top-nav{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:24px}
+.top-nav a{color:var(--accent);font-weight:700;text-decoration:none;padding:8px 12px;border-radius:10px;background:#eff6ff;transition:background .15s ease}
+.top-nav a:hover{background:#dbeafe}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px}
+.settings-section,.progress-section,.flashcard-section,.quiz-section{margin:32px 0;padding:24px;background:var(--card);border-radius:20px;box-shadow:0 1px 8px rgba(15,23,42,.08)}
+.settings-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:16px}
+.settings-grid label{display:flex;flex-direction:column;gap:8px;color:var(--text, #0f172a)}
+.settings-grid select,input[type='range'],input[type='checkbox']{margin-top:8px;padding:10px;border-radius:10px;border:1px solid #cbd5e1;background:#fff}
+.settings-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:24px}
+.button-secondary{background:#e2e8f0;color:var(--text, #0f172a);border:none;padding:12px 16px;border-radius:12px;cursor:pointer}
+.button-secondary:hover{background:#dbeafe}
+.button-danger{background:#fecaca;color:#991b1b;border:none;padding:12px 16px;border-radius:12px;cursor:pointer}
+.button-danger:hover{background:#fca5a5}
+.file-label{display:inline-flex;align-items:center;gap:10px;cursor:pointer}
+.file-label input{display:none}
+.import-error{margin-top:12px;color:#b91c1c}
+.review-controls,.quiz-types{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:16px}
+.review-controls button,.quiz-types button{padding:10px 14px;border-radius:12px;border:1px solid transparent;background:#e2e8f0;color:var(--text, #0f172a);cursor:pointer}
+.review-controls button.active,.quiz-types button.active{background:var(--accent);color:#fff}
+.flashcard-card{display:grid;gap:18px}
+.flashcard-content{padding:20px;background:var(--active-bg);border-radius:18px;border:1px solid rgba(59,130,246,.16)}
+.flashcard-front{display:flex;flex-direction:column;gap:10px}
+.flashcard-symbol,.flashcard-word{font-size:3rem;font-weight:700}
+.flashcard-actions{display:flex;flex-wrap:wrap;gap:10px}
+.flashcard-actions button{padding:10px 14px;border-radius:12px;border:none;background:#e2e8f0;color:var(--text, #0f172a);cursor:pointer}
+.flashcard-actions button:hover{background:#dbeafe}
+.flashcard-empty{padding:20px;background:#f8fafc;border-radius:16px}
+.quiz-card{padding:24px;border-radius:18px;background:var(--active-bg);border:1px solid rgba(59,130,246,.16)}
+.quiz-label{font-weight:700;margin-bottom:12px}
+.quiz-prompt{font-size:1.5rem;line-height:1.4;margin-bottom:18px}
+.quiz-options{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:12px}
+.quiz-options button{padding:14px 16px;border-radius:12px;border:1px solid #cbd5e1;background:#fff;color:#0f172a;cursor:pointer}
+.quiz-options button.selected{background:var(--accent);color:#fff;border-color:var(--accent)}
+.quiz-feedback{margin-top:16px;font-weight:700;color:#0f172a}
+.quiz-summary{margin-top:18px;color:#334155;font-weight:600}
+.progress-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px}
+.progress-card{padding:18px;border-radius:18px;background:var(--active-bg);color:var(--text, #0f172a);display:flex;flex-direction:column;gap:8px}
+.progress-card strong{font-size:2rem}
+.progress-summary{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:20px}
+.harakat-disabled{padding:18px;border-radius:16px;background:#f8fafc;color:var(--text, #0f172a);border:1px solid #cbd5e1;margin:24px 0}
 .card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 1px 3px rgba(0,0,0,.08)}
 .card-active{border:2px solid var(--accent);background:var(--active-bg)}
 .card-known{border:2px solid #4ade80;background:#ecfdf5}

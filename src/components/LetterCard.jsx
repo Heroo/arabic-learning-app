@@ -1,6 +1,6 @@
 import React, {useState, useRef} from 'react'
 
-export default function LetterCard({letter, activeSymbol, knownSymbols, onSelect, onToggleKnown, onOpenDetails}){
+export default function LetterCard({letter, activeSymbol, knownSymbols, audioRate = 1, onSelect, onToggleKnown, onOpenDetails}){
   const [playing, setPlaying] = useState(false)
   const [activeIdx, setActiveIdx] = useState(null)
   const synthRef = useRef(typeof window !== 'undefined' ? window.speechSynthesis : null)
@@ -24,7 +24,7 @@ export default function LetterCard({letter, activeSymbol, knownSymbols, onSelect
     } else if(synthRef.current){
       const utter = new SpeechSynthesisUtterance(letter.name_ar)
       utter.lang = 'ar-SA'
-      utter.rate = 0.9
+      utter.rate = audioRate
       synthRef.current.cancel()
       synthRef.current.speak(utter)
     }

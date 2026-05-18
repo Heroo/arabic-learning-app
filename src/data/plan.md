@@ -38,11 +38,12 @@ These shape every feature:
 - [x] 3.3 Phonetics & Sound Library: Web Speech API jako fallback
 - [x] 3.4 Harakat Module: gotowy moduł harakat z przykładami i odtwarzaniem audio
 - [x] 3.5 Vocabulary & Words Module: baza słówek z kategoriami i aktywnym podświetleniem
-- [ ] 3.5 Vocabulary audio: każde słowo i litera z własnym odtwarzaniem audio
-- [ ] 3.5 Flashcard / favorites / “I know this” w słówkach
+- [ ] 3.5 Vocabulary audio: każde słowo i litera z własnym odtwarzaniem audio (Web Speech API only)
+- [x] 3.5 Flashcard / “I know this” w słówkach
+- [ ] 3.5 Ulubione słowa UI
 - [ ] 3.6 Writing Practice: śledzenie napisów / przycisk do trasowania
-- [ ] 3.7 Quizzes & Progress: quizy, dashboard postępów, SRS, statystyki
-- [ ] 3.8 Settings: motyw, rozmiar czcionki, audio speed, wyłączanie harakat, język UI, eksport/import
+- [x] 3.7 Quizzes & Progress: quizy, dashboard postępów, SRS, statystyki
+- [x] 3.8 Settings: motyw, rozmiar czcionki, audio speed, wyłączanie harakat, język UI, eksport/import
 
 ### 3.1 Alphabet Explorer (MVP — Week 1)
 
@@ -95,7 +96,7 @@ The core differentiator. When a target letter is active, **every Arabic word dis
 
 1. **Pre-recorded studio files.** Best quality. Options:
 - Wiktionary Commons: many letters have CC-BY-SA recordings ([commons.wikimedia.org](https://commons.wikimedia.org))
-- [Tatoeba](https://tatoeba.org) — sentence-level audio, MSA available
+- [Tatoeba](https://tatoeba.orgy) — sentence-level audio, MSA available
 - [Forvo](https://forvo.com) — word-level, requires API or manual download
 - **Record your own** with Audacity if a native speaker is reachable
 1. **Web Speech API** as fallback for dynamic words not in the asset library:

@@ -3,7 +3,7 @@ import harakat from '../data/harakat.json'
 
 const hasSpeech = typeof window !== 'undefined' && 'speechSynthesis' in window
 
-export default function HarakatModule({ activeHarakat, onSelectHarakat }) {
+export default function HarakatModule({ activeHarakat, onSelectHarakat, audioRate = 1 }) {
   const [playing, setPlaying] = useState(false)
   const [activeExample, setActiveExample] = useState(null)
   const synthRef = useRef(hasSpeech ? window.speechSynthesis : null)
@@ -17,7 +17,7 @@ export default function HarakatModule({ activeHarakat, onSelectHarakat }) {
     if (synthRef.current) {
       const utter = new SpeechSynthesisUtterance(item.examples[0].word)
       utter.lang = 'ar-SA'
-      utter.rate = 0.9
+      utter.rate = audioRate
       synthRef.current.cancel()
       synthRef.current.speak(utter)
     }
