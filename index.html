@@ -4,8 +4,37 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arabic Learning App — MVP</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Arial, sans-serif;
+        background: #f0f7ff;
+        color: #102a43;
+      }
+      .static-check {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+      .static-check h1 {
+        margin: 0 0 16px;
+        font-size: 2rem;
+      }
+      .static-check p {
+        margin: 0;
+        font-size: 1rem;
+      }
+    </style>
   </head>
   <body>
+    <div class="static-check">
+      <h1>Static HTML check</h1>
+      <p>If you see this, the page is rendering HTML correctly.</p>
+      <p>JavaScript may still be failing if the app does not appear.</p>
+    </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
