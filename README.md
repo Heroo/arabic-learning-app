@@ -16,4 +16,5 @@ npm run dev
 Ograniczenia i dalsze kroki:
 - Web Speech API zależy od przeglądarki (najlepiej Chrome/Edge/Firefox z obsługą TTS dla `ar`).
 - Można podmienić na darmowe nagrania CC z Wikimedia Commons — dodam to na życzenie.
+- GitHub Pages wymaga poprawnego `base` w Vite: ustawione jest teraz na `/arabic-learning-app/`.
 # arabic-learning-app
