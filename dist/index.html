@@ -28,16 +28,25 @@
         font-size: 1rem;
       }
     </style>
-    <script type="module" crossorigin src="/arabic-learning-app/assets/index-ceb9a439.js"></script>
-    <link rel="stylesheet" href="/arabic-learning-app/assets/index-9cff7bcf.css">
+    <script type="module" crossorigin src="/arabic-learning-app/assets/index-287b3364.js"></script>
+    <link rel="stylesheet" href="/arabic-learning-app/assets/index-276713c5.css">
   </head>
   <body>
     <div class="static-check">
-      <h1>Static HTML check</h1>
-      <p>If you see this, the page is rendering HTML correctly.</p>
-      <p>JavaScript may still be failing if the app does not appear.</p>
+      <h1>Static HTML check — updated</h1>
+      <p>If you see this, the GitHub Pages deployment is still serving the raw HTML shell.</p>
+      <p>React app must be built and deployed to replace this placeholder.</p>
+      <p id="build-info">Build info: <span id="build-time">(unknown)</span></p>
     </div>
     <div id="root"></div>
     
+    <script>
+      try {
+        const el = document.getElementById('build-time')
+        if (el) el.textContent = document.lastModified || new Date().toLocaleString()
+      } catch (e) {
+        // ignore
+      }
+    </script>
   </body>
 </html>

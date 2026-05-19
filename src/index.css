@@ -102,7 +102,7 @@ body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var
 .word-card-arabic{font-size:1.75rem;line-height:1.2;word-break:break-word;direction:rtl;unicode-bidi:isolate;text-align:right}
 .glyph{display:inline;position:relative;vertical-align:top;margin:0 2px}
 .glyph .harakat{display:block;position:absolute;top:-0.85em;left:50%;transform:translateX(-50%);font-size:0.7rem;line-height:1;color:#374151;white-space:nowrap}
-.glyph .base{font-size:1.75rem;line-height:1;display:inline-block}
+.glyph .base{font-size:1.75rem;line-height:1;display:inline}
 .glyph .base.highlight{background:var(--highlight);border-radius:3px;padding:0 4px}
 .clickable{cursor:pointer}
 .clickable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
