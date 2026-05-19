@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Arabic Learning App — MVP</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, Arial, sans-serif;
+        background: #f0f7ff;
+        color: #102a43;
+      }
+      .static-check {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        text-align: center;
+      }
+      .static-check h1 {
+        margin: 0 0 16px;
+        font-size: 2rem;
+      }
+      .static-check p {
+        margin: 0;
+        font-size: 1rem;
+      }
+    </style>
+    <script type="module" crossorigin src="/arabic-learning-app/assets/index-b79c531d.js"></script>
+    <link rel="stylesheet" href="/arabic-learning-app/assets/index-41041292.css">
+  </head>
+  <body>
+    <div class="static-check">
+      <h1>Static HTML check — updated</h1>
+      <p>If you see this, the GitHub Pages deployment is still serving the raw HTML shell.</p>
+      <p>React app must be built and deployed to replace this placeholder.</p>
+      <p id="build-info">Build info: <span id="build-time">(unknown)</span></p>
+    </div>
+    <div id="root"></div>
+    
+    <script>
+      try {
+        const el = document.getElementById('build-time')
+        if (el) el.textContent = document.lastModified || new Date().toLocaleString()
+      } catch (e) {
+        // ignore
+      }
+    </script>
+  </body>
+</html>
