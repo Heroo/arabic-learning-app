@@ -34,8 +34,17 @@
       <h1>Static HTML check — updated</h1>
       <p>If you see this, the GitHub Pages deployment is still serving the raw HTML shell.</p>
       <p>React app must be built and deployed to replace this placeholder.</p>
+      <p id="build-info">Build info: <span id="build-time">(unknown)</span></p>
     </div>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      try {
+        const el = document.getElementById('build-time')
+        if (el) el.textContent = document.lastModified || new Date().toLocaleString()
+      } catch (e) {
+        // ignore
+      }
+    </script>
   </body>
 </html>

@@ -1,17 +1,48 @@
 import React from 'react'
 
+function splitArabicClusters(str) {
+  const clusters = []
+  let current = { base: '', marks: '' }
+  const isBase = (ch) => /[\u0621-\u064A\u0660-\u0669\u0671\u0620-\u0629]/.test(ch)
+  const isMark = (ch) => /[\u064B-\u0652\u0670\u0674\u06D6-\u06ED]/.test(ch)
+
+  for (const ch of str) {
+    if (isBase(ch) || ch === ' ' || ch === "'" || ch === '’') {
+      if (current.base || current.marks) {
+        clusters.push(current)
+      }
+      current = { base: ch, marks: '' }
+    } else if (isMark(ch)) {
+      current.marks += ch
+    } else {
+      // other characters (punctuation) treat as base
+      if (current.base || current.marks) {
+        clusters.push(current)
+      }
+      current = { base: ch, marks: '' }
+    }
+  }
+  if (current.base || current.marks) clusters.push(current)
+  return clusters
+}
+
 export default function WordCard({ word, activeSymbol }) {
-  const hasActive = activeSymbol && Array.from(word.word).some((char) => char === activeSymbol)
+  const clusters = splitArabicClusters(word.word)
+  const hasActive = activeSymbol && clusters.some((c) => c.base === activeSymbol)
 
   return (
     <article className={`word-card ${hasActive ? 'word-card-active' : ''}`}>
       <div className="word-card-title">
         <div className="word-card-arabic">
-          {Array.from(word.word).map((char, index) => (
-            <span key={index} className={char === activeSymbol ? 'highlight' : ''}>
-              {char}
-            </span>
-          ))}
+          {clusters.map((g, idx) => {
+            const isActive = g.base === activeSymbol
+            return (
+              <span key={idx} className="glyph">
+                <span className="harakat">{g.marks}</span>
+                <span className={isActive ? 'base highlight' : 'base'}>{g.base}</span>
+              </span>
+            )
+          })}
         </div>
         <div className="word-card-meta">
           <div className="word-card-translit">{word.transliteration}</div>
