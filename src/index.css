@@ -104,6 +104,8 @@ body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var
 .glyph .harakat{font-size:0.7rem;line-height:1;margin-bottom:2px;color:#374151}
 .glyph .base{font-size:1.75rem;line-height:1}
 .glyph .base.highlight{background:var(--highlight);border-radius:3px;padding:0 4px}
+.clickable{cursor:pointer}
+.clickable:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
 .word-card-meta{display:flex;flex-wrap:wrap;gap:10px;color:#334155}
 .word-card-translit{font-weight:700}
 .word-card-translation{color:#475569}

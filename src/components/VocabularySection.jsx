@@ -11,7 +11,7 @@ const categoryLabels = {
   animals: 'Zwierzęta'
 }
 
-export default function VocabularySection({ vocabulary, activeSymbol }) {
+export default function VocabularySection({ vocabulary, activeSymbol, onSelectSymbol }) {
   return (
     <section id="vocabulary" className="vocabulary-section">
       <div className="section-header">
@@ -24,7 +24,12 @@ export default function VocabularySection({ vocabulary, activeSymbol }) {
           <h3>{categoryLabels[group.category] || group.category}</h3>
           <div className="vocab-grid">
             {group.words.map((word, index) => (
-              <WordCard key={`${group.category}-${index}`} word={word} activeSymbol={activeSymbol} />
+              <WordCard
+                key={`${group.category}-${index}`}
+                word={word}
+                activeSymbol={activeSymbol}
+                onSelectSymbol={onSelectSymbol}
+              />
             ))}
           </div>
         </div>

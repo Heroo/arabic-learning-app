@@ -220,7 +220,7 @@ export default function App() {
         </div>
       </section>
 
-      <VocabularySection vocabulary={vocabulary} activeSymbol={activeSymbol} />
+      <VocabularySection vocabulary={vocabulary} activeSymbol={activeSymbol} onSelectSymbol={toggleActiveSymbol} />
 
       <SettingsPanel
         settings={settings}

@@ -26,7 +26,7 @@ function splitArabicClusters(str) {
   return clusters
 }
 
-export default function WordCard({ word, activeSymbol }) {
+export default function WordCard({ word, activeSymbol, onSelectSymbol }) {
   const clusters = splitArabicClusters(word.word)
   const hasActive = activeSymbol && clusters.some((c) => c.base === activeSymbol)
 
@@ -39,7 +39,19 @@ export default function WordCard({ word, activeSymbol }) {
             return (
               <span key={idx} className="glyph">
                 <span className="harakat">{g.marks}</span>
-                <span className={isActive ? 'base highlight' : 'base'}>{g.base}</span>
+                <span
+                  className={isActive ? 'base highlight clickable' : 'base clickable'}
+                  role="button"
+                  tabIndex={0}
+                  onClick={() => onSelectSymbol && onSelectSymbol(g.base)}
+                  onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                      onSelectSymbol && onSelectSymbol(g.base)
+                    }
+                  }}
+                >
+                  {g.base}
+                </span>
               </span>
             )
           })}
@@ -52,7 +64,18 @@ export default function WordCard({ word, activeSymbol }) {
 
       <div className="word-card-breakdown">
         {word.letters.map((letter, index) => (
-          <span key={index} className={`letter-badge ${letter === activeSymbol ? 'highlight' : ''}`}>
+          <span
+            key={index}
+            className={`letter-badge ${letter === activeSymbol ? 'highlight' : ''} clickable`}
+            role="button"
+            tabIndex={0}
+            onClick={() => onSelectSymbol && onSelectSymbol(letter)}
+            onKeyDown={(event) => {
+              if (event.key === 'Enter' || event.key === ' ') {
+                onSelectSymbol && onSelectSymbol(letter)
+              }
+            }}
+          >
             {letter}
           </span>
         ))}
