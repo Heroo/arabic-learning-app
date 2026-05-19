@@ -38,7 +38,6 @@ export default function WordCard({ word, activeSymbol, onSelectSymbol }) {
             const isActive = g.base === activeSymbol
             return (
               <span key={idx} className="glyph">
-                <span className="harakat">{g.marks}</span>
                 <span
                   className={isActive ? 'base highlight clickable' : 'base clickable'}
                   role="button"
@@ -50,7 +49,7 @@ export default function WordCard({ word, activeSymbol, onSelectSymbol }) {
                     }
                   }}
                 >
-                  {g.base}
+                  {g.base}{g.marks}
                 </span>
               </span>
             )
