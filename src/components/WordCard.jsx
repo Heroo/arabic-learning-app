@@ -33,7 +33,7 @@ export default function WordCard({ word, activeSymbol, onSelectSymbol }) {
   return (
     <article className={`word-card ${hasActive ? 'word-card-active' : ''}`}>
       <div className="word-card-title">
-        <div className="word-card-arabic">
+        <div dir="rtl" lang="ar" className="word-card-arabic">
           {clusters.map((g, idx) => {
             const isActive = g.base === activeSymbol
             return (

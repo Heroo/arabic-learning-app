@@ -99,7 +99,7 @@ body{font-family:Inter,system-ui,Arial,sans-serif;background:var(--bg);color:var
 .word-card:hover{transform:translateY(-2px);box-shadow:0 16px 30px rgba(15,23,42,.08)}
 .word-card-active{border-color:var(--accent);background:#eff6ff}
 .word-card-title{display:flex;flex-direction:column;gap:8px}
-.word-card-arabic{font-size:1.75rem;line-height:1.2;word-break:break-word}
+.word-card-arabic{font-size:1.75rem;line-height:1.2;word-break:break-word;direction:rtl;unicode-bidi:isolate;text-align:right}
 .glyph{display:inline-flex;flex-direction:column;align-items:center;margin:0 2px}
 .glyph .harakat{font-size:0.7rem;line-height:1;margin-bottom:2px;color:#374151}
 .glyph .base{font-size:1.75rem;line-height:1}
