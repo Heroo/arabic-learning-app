@@ -97,15 +97,19 @@ export default function LetterCard({letter, activeSymbol, knownSymbols, audioRat
       </div>
 
       <div className="examples">
-        {letter.examples.map((ex,wi)=> (
-          <div className="word" key={wi}>
-            {Array.from(ex.word).map((ch,ci)=> {
-              const isActive = (ci===activeIdx && ch===letter.symbol) || activeSymbol === ch
-              return <span key={ci} className={isActive ? 'highlight' : ''}>{ch}</span>
-            }))}
-            {' '}— {ex.translit}
-          </div>
-        ))}
+        {letter.examples.map((ex, wi) => {
+          return (
+            <div className="word" key={wi}>
+              {Array.from(ex.word).map((ch, ci) => {
+                const isActive = (ci === activeIdx && ch === letter.symbol) || activeSymbol === ch
+                return (
+                  <span key={ci} className={isActive ? 'highlight' : ''}>{ch}</span>
+                )
+              })}
+              {' '}— {ex.translit}
+            </div>
+          )
+        })}
       </div>
     </div>
   )
